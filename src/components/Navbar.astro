@@ -1,0 +1,80 @@
+---
+import { SITE_TITLE } from "src/consts";
+import hamburger from "@assets/hamburger.svg";
+---
+
+<header class="bg-white">
+  <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="md:flex md:items-center md:gap-12">
+        <a class="block font-semibold" href="/">
+          <span>{SITE_TITLE}</span>
+        </a>
+      </div>
+
+      <div class="hidden md:block">
+        <nav aria-label="Global">
+          <ul class="flex items-center gap-6 text-sm">
+            <li>
+              <a
+                class="text-gray-500 transition hover:text-gray-500/75"
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-gray-500 transition hover:text-gray-500/75"
+                href="/reviews"
+              >
+                Reviews
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-gray-500 transition hover:text-gray-500/75"
+                href="/about"
+              >
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="block md:hidden" x-data="{ isOpen: false }">
+        <button
+          class="text-gray-600 transition hover:text-gray-600/75"
+          x-on:click="isOpen = !isOpen"
+        >
+          <span class="sr-only">Open Menu</span>
+          <img src={hamburger.src} alt="hamburger menu" fetchpriority="high" />
+        </button>
+        <div
+          x-show="isOpen"
+          class="fixed top-0 left-0 w-full h-full overflow-x-hidden text-2xl text-center text-gray-300 bg-gray-800/65 z-1"
+        >
+          <button
+            x-on:click="isOpen = !isOpen"
+            class="absolute text-4xl cursor-pointer top-20 right-12"
+            >&times;</button
+          >
+          <nav class="relative top-[25%] w-full mt-10">
+            <ul class="flex flex-col gap-8">
+              <li>
+                <a href="/" class="hover:text-white">Home</a>
+              </li>
+              <li>
+                <a href="/reviews" class="hover:text-white">Reviews</a>
+              </li>
+              <li>
+                <a href="/about" class="hover:text-white">About</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

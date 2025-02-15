@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import BGImage from "@assets/background-image.jpg";
+---
+
+<section>
+  <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+      <div>
+        <div class="max-w-lg md:max-w-none">
+          <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+            Bulukucing, my personal games reviews
+          </h2>
+
+          <p class="mt-4 text-gray-700">
+            Review berbagai games dari judul lama maupun judul baru.
+          </p>
+          <div class="flex gap-6 py-8">
+            <a
+              class="relative inline-block group focus:ring-3 focus:outline-hidden"
+              href="/reviews"
+            >
+              <span
+                class="absolute inset-0 translate-x-0 translate-y-0 bg-green-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"
+              ></span>
+
+              <span
+                class="relative inline-block px-8 py-3 text-sm font-bold tracking-widest uppercase border-2 border-current"
+              >
+                Games Reviews
+              </span>
+            </a>
+            <a
+              class="relative inline-block group focus:ring-3 focus:outline-hidden"
+              href="/about"
+            >
+              <span
+                class="absolute inset-0 translate-x-0 translate-y-0 bg-pink-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"
+              ></span>
+
+              <span
+                class="relative inline-block px-8 py-3 text-sm font-bold tracking-widest uppercase border-2 border-current"
+              >
+                About Me
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <Image
+          src={BGImage}
+          width={1200}
+          height={630}
+          class="rounded"
+          alt={`OWOWOWOWOWOWOW`}
+        />
+      </div>
+    </div>
+  </div>
+</section>

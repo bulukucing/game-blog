@@ -1,0 +1,25 @@
+---
+import { SITE_TITLE } from "src/consts";
+import { ClientRouter } from "astro:transitions";
+import "@fontsource/geist-sans";
+import "@fontsource/inter";
+import "@styles/main.css";
+
+const { title, description } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="website" />
+<!-- <meta property="og:url" content="" /> -->
+<!-- <meta property="og:image" content="" /> -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+<ClientRouter />

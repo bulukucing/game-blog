@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/Card.astro";
+
+const posts = await getCollection("reviews");
+---
+
+<Layout
+  title="Personal Games Reviews - Bulukucing"
+  description="Bulukucing personal games reviews"
+>
+  <div class="container px-4 mx-auto">
+    <div class="mt-6 mb-12 text-center">
+      <h1 class="mb-2 text-3xl font-semibold text-gray-900">
+        Personal Games Reviews
+      </h1>
+      <p class="mt-4 text-gray-700">Haloooowwwww :)</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+      {posts.map((post) => <Card post={post} id={post.id} />)}
+    </div>
+  </div>
+</Layout>
